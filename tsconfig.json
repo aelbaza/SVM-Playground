@@ -1,13 +1,13 @@
 {
-  "compilerOptions": {
-    "module": "ES6",
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "target": "ES5",
-    "noEmitOnError":true,
-    "sourceMap": true,
-    "moduleResolution": "Node",
-    "lib": ["WebWorker", "ES6", "DOM", "ScriptHost"]
-  },
-  "exclude": ["node_modules"]
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "module": "ES6",
+        "target": "ES5",
+        "allowJs": true,
+        "moduleResolution": "node"
+    },
+
+   
 }
