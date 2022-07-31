@@ -95,20 +95,14 @@ function makeGUI() {
     });
     trainWorker.onmessage = (msg: MessageEvent) => {
       model = SVM.load(msg.data);
-      console.log("SVM Model", model);
-      const trainingSet = trainData.map((d) => [d.x, d.y]);
-      console.log("trainingSet", trainingSet);
-      const labels = trainData.map((d) => inputScale(d.label));
-      console.log("labels", labels);
-      const isClassifier = isClassification();
+      trainData.map((d) => [d.x, d.y]);
+      trainData.map((d) => inputScale(d.label));
+      isClassification();
 
       const predictions: number[] = new Array(data.length);
       const svmPredictions: number[] = model.predict(
         data.map((d) => [d.x, d.y])
       );
-      const indeces: number[] = model.getSVIndices(data.map((d) => [d.x, d.y]));
-      console.log("indices", indeces);
-      console.log("svmprediction", svmPredictions);
 
       svmPredictions.forEach((element, index) => {
         let x = -1;
@@ -117,8 +111,6 @@ function makeGUI() {
         }
         predictions[index] = svmPredictions[index];
       });
-      console.log("svm", svmPredictions);
-      console.log("svm", predictions);
 
       for (let i = 0; i < predictions.length; i++) {
         const pred = predictions[i];
@@ -128,7 +120,6 @@ function makeGUI() {
         else if (pred === 1) data[i]["voteCounts"][1]++;
         else throw new Error("Vote is invalid");
       }
-      console.log("svmprediction rescaled", predictions);
       [trainData, testData] = splitTrainTest(data);
       const [trainPredictions, testPredictions] = splitTrainTest(predictions);
       const labeles = data.map((d) => d.label);
