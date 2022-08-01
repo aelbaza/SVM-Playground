@@ -333,7 +333,7 @@ function reset(onStartup = false) {
 
   trainWorker = new Worker();
   options = {
-    kernel: SVM.KERNEL_TYPES.RBF,
+    kernel: SVM.KERNEL_TYPES.LINEAR,
     type: SVM.SVM_TYPES.C_SVC,
     gamma: state.gamma,
     cost: state.parameterC,
