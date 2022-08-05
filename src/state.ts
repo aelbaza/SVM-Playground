@@ -84,7 +84,7 @@ export class State {
   seed: string;
   percSamples = 80;
   parameterC = 1;
-  polyDegree = 1;
+  polyDegree = 2;
   gamma = 0;
 
   /**

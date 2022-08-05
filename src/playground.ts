@@ -338,36 +338,30 @@ function reset(onStartup = false) {
   if (kernel === "POLYNOMIAL") {
     trainWorker = new Worker();
     options = {
-      kernel: SVM.KERNEL_TYPES.POLYNOMIAL,
       type: SVM.SVM_TYPES.C_SVC,
+      kernel: SVM.KERNEL_TYPES.POLYNOMIAL,
       gamma: state.gamma,
       cost: state.parameterC,
       degree: state.polyDegree,
+      shrinking: true,
     };
   } else if (kernel === "RBF") {
     trainWorker = new Worker();
     options = {
-      kernel: SVM.KERNEL_TYPES.RBF,
       type: SVM.SVM_TYPES.C_SVC,
+      kernel: SVM.KERNEL_TYPES.RBF,
       gamma: state.gamma,
       cost: state.parameterC,
     };
   } else {
     trainWorker = new Worker();
     options = {
-      kernel: SVM.KERNEL_TYPES.LINEAR,
       type: SVM.SVM_TYPES.C_SVC,
+      kernel: SVM.KERNEL_TYPES.LINEAR,
       cost: state.parameterC,
     };
   }
 
-  /*   trainWorker = new Worker();
-  options = {
-    kernel: krn,
-    type: SVM.SVM_TYPES.C_SVC,
-    gamma: state.gamma,
-    cost: state.parameterC,
-  }; */
   if (isClassification()) {
     metricList = ["Accuracy", "Precision", "Recall"];
     getMetrics = Utils.getClfMetrics;
@@ -480,32 +474,6 @@ function isLoading(loading: boolean) {
 function isClassification() {
   return state.problem === Problem.CLASSIFICATION;
 }
-/* function kernelType() {
-  const activation = d3.select("#activations").on("change", function () {
-    console.log(activation);
-    const element = this as HTMLInputElement;
-    state.activation = +element.value;
-    d3.select("label[for='activations'].value").text(element.value);
-    const krnType = element.value.toUpperCase();
-    console.log(krnType);
-    if (element.value.toUpperCase() === "LINEAR") {
-      (document.getElementById("gamma") as HTMLInputElement).disabled = true;
-      (document.getElementById("polyDegree") as HTMLInputElement).disabled =
-        true;
-    } else if (element.value.toUpperCase() === "RBF") {
-      (document.getElementById("gamma") as HTMLInputElement).disabled = false;
-      (document.getElementById("polyDegree") as HTMLInputElement).disabled =
-        true;
-    } else {
-      (document.getElementById("gamma") as HTMLInputElement).disabled = false;
-      (document.getElementById("polyDegree") as HTMLInputElement).disabled =
-        false;
-    }
-    return krnType;
-    reset();
-  });
-} */
-
 drawDatasetThumbnails();
 makeGUI();
 generateData(true);
