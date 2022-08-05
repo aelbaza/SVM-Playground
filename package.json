@@ -27,7 +27,6 @@
     "d3": "^6.3.0",
     "libsvm-js": "^0.2.1",
     "material-design-lite": "^1.3.0",
-    "node-svm": "^2.1.9",
     "seedrandom": "^2.4.3"
   },
   "devDependencies": {

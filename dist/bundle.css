@@ -745,11 +745,11 @@ g.point circle {
 }
 
 /* Article */
-article {
+/* article {
   background: white;
   padding: 80px 0;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.1);
-  /*border-top: 1px solid rgba(0, 0, 0, 0.08);*/
+
 }
 
 article h2,
@@ -775,7 +775,7 @@ article p {
   font-size: 17px;
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 
 /* Footer */
