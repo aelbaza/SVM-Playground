@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "e2e": "cypress open"
   },
   "browser": {
     "fs": false,
@@ -35,6 +36,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^1.1.2",
+    "cypress": "^10.4.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^0.10.0",
     "style-loader": "^3.3.1",

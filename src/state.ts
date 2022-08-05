@@ -80,7 +80,7 @@ export class State {
   discretize = false;
   percTrainData = 70;
   problem = Problem.CLASSIFICATION;
-  dataset: dataset.DataGenerator = dataset.classifyCircleData;
+  dataset: dataset.DataGenerator = dataset.classifyTwoGaussData;
   seed: string;
   percSamples = 80;
   parameterC = 1;
