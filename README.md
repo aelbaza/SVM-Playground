@@ -3,7 +3,7 @@
 
 ## Description
 
-SVM playground is an interactive visualization of K-Means Clustering and DBSCAN algorithms, written in
+SVM playground is an interactive visualization of support vector machines algorithms, written in
 TypeScript using d3.js. 
 
 This playgound is inspired by [Tensorflow - Neural Network Playgound](https://playground.tensorflow.org/).
