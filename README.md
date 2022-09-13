@@ -9,7 +9,7 @@ TypeScript using d3.js.
 This playgound is inspired by [Tensorflow - Neural Network Playgound](https://playground.tensorflow.org/).
 
 ## Deployment
-This application is available at [https://aelbaza.github.io/SVMPlayground]
+This application is available at [SVM-Playground](https://aelbaza.github.io/SVMPlayground).
 
 ## Development
 
